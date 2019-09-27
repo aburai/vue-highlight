@@ -1,5 +1,5 @@
 /*!
-  * vue-highlight v1.0.0
+  * vue-highlight v1.0.1
   * (c) 2019 André Bunse (aburai)
   * @license MIT
   */
@@ -180,7 +180,7 @@ class VueHighlight {
 }
 
 VueHighlight.install = install;
-VueHighlight.version = '1.0.0';
+VueHighlight.version = '1.0.1';
 
 if (window && window.Vue) window.Vue.use(VueHighlight);
 
