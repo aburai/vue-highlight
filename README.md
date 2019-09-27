@@ -6,7 +6,7 @@
 
 `vue-highlight` is a plugin for [Vue.js](http://vuejs.org). Features include:
 
-- options for finetuning (initDelay, focusDelay, refocusDelay)
+- options for finetuning (see default options)
 - option for debugging (logs highlighting workflow)
 
 ## Install
@@ -14,8 +14,8 @@
 From npm:
 
 ``` sh
-$ npm install @aburai/vue-autohighlight --save
-$ yarn add @aburai/vue-autohighlight
+$ npm install @aburai/vue-highlight --save
+$ yarn add @aburai/vue-highlight
 ```
 
 ### Usage
@@ -23,14 +23,45 @@ $ yarn add @aburai/vue-autohighlight
 #### append plugin to Vue
 ``` js
 import Vue from 'vue'
-import VueHighlight from '@aburai/vue-autohighlight'
+import VueHighlight from '@aburai/vue-highlight'
 Vue.use(VueHighlight)
+```
+#### default options
+``` js
+{
+  wordsOnly: false,
+  caseSensitive: false,
+  notGlobal: true,
+  defaultSelector: 'div',
+  nodeName: 'span',
+  className: 'v-highlight',
+  classNameStopWord: 'v-highlight v-highlight--stopword',
+  ignore: 'v-highlight--ignore',
+  splitter: [',', '/'],
+  debug: false
+}
 ```
 
 #### use plugin
 ``` js
-mounted() {
-    this.$highlight() // 
+onInput(value) {
+    this.$highlight(value, 'td', {
+      wordsOnly: false,
+      caseSensitive: false,
+      notGlobal: true
+    })
+}
+```
+``` css
+.v-highlight {
+    padding: 0 1px;
+    font-size: 105%;
+    font-weight: 500;
+    color: #000;
+    background: yellow;
+    &.v-highlight--stopword {
+        background: red;
+    }
 }
 ```
 
