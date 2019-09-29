@@ -1,5 +1,5 @@
 /*!
-  * vue-highlight v1.0.1
+  * vue-highlight v1.0.2
   * (c) 2019 André Bunse (aburai)
   * @license MIT
   */
@@ -54,7 +54,7 @@ var HL = {
       return typeof settings.stopwords === 'undefined' || (settings.stopwords ? isStopword : !isStopword)
     });
     // clean up stopwords
-    words = words.map(function (w) { return w.replace(_REGEX_STOPWORD, ''); });
+    words = words.map(function (w) { return w.replace(_REGEX_STOPWORD, ''); }).filter(function (w) { return !!w.trim(); });
     // NOTE prevent regexp with empty words array
     //  creates endless loop in while clause
     if (!words || words.length === 0) { return }
@@ -96,6 +96,8 @@ var HL = {
     if (node.nodeType === 3) {
       var match;
       while ((match = re.exec(node.data)) !== null) {
+        if (!match[0].length) { break } // match has no text, break to prevent endless loop
+
         var highlight = document.createElement(nodeName);
         highlight.className = className;
 
@@ -183,7 +185,7 @@ VueHighlight.prototype.init = function init (app /* Vue component instance */) {
 };
 
 VueHighlight.install = install;
-VueHighlight.version = '1.0.1';
+VueHighlight.version = '1.0.2';
 
 if (window && window.Vue) { window.Vue.use(VueHighlight); }
 
