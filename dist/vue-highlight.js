@@ -1,13 +1,13 @@
 /*!
   * vue-highlight v1.0.2
-  * (c) 2019 André Bunse (aburai)
+  * (c) 2020 André Bunse (aburai)
   * @license MIT
   */
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
   (global = global || self, global.VueHighlight = factory());
-}(this, function () { 'use strict';
+}(this, (function () { 'use strict';
 
   var _OPTIONS = {
     wordsOnly: false,
@@ -196,4 +196,4 @@
 
   return VueHighlight;
 
-}));
+})));

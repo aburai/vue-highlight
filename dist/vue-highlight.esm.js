@@ -1,6 +1,6 @@
 /*!
   * vue-highlight v1.0.2
-  * (c) 2019 André Bunse (aburai)
+  * (c) 2020 André Bunse (aburai)
   * @license MIT
   */
 var _OPTIONS = {
