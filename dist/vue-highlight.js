@@ -1,5 +1,5 @@
 /*!
-  * vue-highlight v1.0.2
+  * vue-highlight v1.0.3
   * (c) 2020 André Bunse (aburai)
   * @license MIT
   */
@@ -190,7 +190,7 @@
   };
 
   VueHighlight.install = install;
-  VueHighlight.version = '1.0.2';
+  VueHighlight.version = '1.0.3';
 
   if (window && window.Vue) { window.Vue.use(VueHighlight); }
 
