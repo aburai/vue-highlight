@@ -7,6 +7,6 @@ import VueHighlight from './index'
 
 declare module 'vue/types/vue' {
   interface Vue {
-    $highlight: VueHighlight
+    $highlight: (query: string, selector?: any, opts?: any) => {}
   }
 }
