@@ -1,6 +1,6 @@
 {
   "name": "@aburai/vue-highlight",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Vue plugin to highlight text.",
   "author": "André Bunse (aburai)",
   "license": "MIT",
