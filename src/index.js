@@ -9,7 +9,7 @@
 
 import { install } from './install'
 
-export default class VueHighlight {
+export class VueHighlight {
   static install: () => void
   static version: string
 
