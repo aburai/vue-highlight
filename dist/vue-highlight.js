@@ -1,13 +1,13 @@
 /*!
   * vue-highlight v1.0.3
-  * (c) 2020 André Bunse (aburai)
+  * (c) 2022 André Bunse (aburai)
   * @license MIT
   */
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-  typeof define === 'function' && define.amd ? define(factory) :
-  (global = global || self, global.VueHighlight = factory());
-}(this, (function () { 'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
+  typeof define === 'function' && define.amd ? define(['exports'], factory) :
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.VueHighlight = {}));
+})(this, (function (exports) { 'use strict';
 
   var _OPTIONS = {
     wordsOnly: false,
@@ -154,17 +154,17 @@
     var _options = Object.assign({}, _OPTIONS, options);
 
     Vue.prototype.$highlight = function (query, selector, copts) {
-      var this$1 = this;
+      var this$1$1 = this;
 
       var _o = Object.assign({}, _options, copts);
       selector = selector || _o.defaultSelector;
       query = (query || '').trim();
 
       this.$nextTick(function () {
-        HL.unhighlight(this$1.$el, _o.className);
+        HL.unhighlight(this$1$1.$el, _o.className);
         if (!query) { return }
 
-        var nodes = this$1.$el.querySelectorAll(selector);
+        var nodes = this$1$1.$el.querySelectorAll(selector);
         if (!nodes) { return }
 
         var il = nodes.length;
@@ -194,6 +194,8 @@
 
   if (window && window.Vue) { window.Vue.use(VueHighlight); }
 
-  return VueHighlight;
+  exports.VueHighlight = VueHighlight;
 
-})));
+  Object.defineProperty(exports, '__esModule', { value: true });
+
+}));

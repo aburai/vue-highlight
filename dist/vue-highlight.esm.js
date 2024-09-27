@@ -1,6 +1,6 @@
 /*!
   * vue-highlight v1.0.3
-  * (c) 2020 André Bunse (aburai)
+  * (c) 2022 André Bunse (aburai)
   * @license MIT
   */
 var _OPTIONS = {
@@ -148,17 +148,17 @@ function install (Vue, options) {
   var _options = Object.assign({}, _OPTIONS, options);
 
   Vue.prototype.$highlight = function (query, selector, copts) {
-    var this$1 = this;
+    var this$1$1 = this;
 
     var _o = Object.assign({}, _options, copts);
     selector = selector || _o.defaultSelector;
     query = (query || '').trim();
 
     this.$nextTick(function () {
-      HL.unhighlight(this$1.$el, _o.className);
+      HL.unhighlight(this$1$1.$el, _o.className);
       if (!query) { return }
 
-      var nodes = this$1.$el.querySelectorAll(selector);
+      var nodes = this$1$1.$el.querySelectorAll(selector);
       if (!nodes) { return }
 
       var il = nodes.length;
@@ -189,4 +189,4 @@ VueHighlight.version = '1.0.3';
 
 if (window && window.Vue) { window.Vue.use(VueHighlight); }
 
-export default VueHighlight;
+export { VueHighlight };

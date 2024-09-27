@@ -1,6 +1,6 @@
 /*!
   * vue-highlight v1.0.3
-  * (c) 2020 André Bunse (aburai)
+  * (c) 2022 André Bunse (aburai)
   * @license MIT
   */
 const _OPTIONS = {
@@ -186,4 +186,4 @@ VueHighlight.version = '1.0.3';
 
 if (window && window.Vue) window.Vue.use(VueHighlight);
 
-export default VueHighlight;
+export { VueHighlight };
